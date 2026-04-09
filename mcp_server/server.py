@@ -437,6 +437,19 @@ def retrieve_project_page(project_id: str, page_id: str) -> str:
     return _safe(lambda: _get_client().get_page(project_id, page_id))
 
 
+@server.tool()
+def update_project_page(project_id: str, page_id: str, name: str = "") -> str:
+    """Update page metadata (name, etc.)."""
+    data = {k: v for k, v in {"name": name}.items() if v}
+    return _safe(lambda: _get_client().update_page(project_id, page_id, **data))
+
+
+@server.tool()
+def update_page_description(project_id: str, page_id: str, description_html: str) -> str:
+    """Update page content/body. Use HTML tags for formatting."""
+    return _safe(lambda: _get_client().update_page_description(project_id, page_id, description_html))
+
+
 # ---------------------------------------------------------------------------
 # Members
 # ---------------------------------------------------------------------------

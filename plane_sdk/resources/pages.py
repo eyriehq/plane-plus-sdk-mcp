@@ -19,3 +19,10 @@ class PagesMixin:
 
     def delete_page(self, project_id: str, page_id: str) -> None:
         return self._delete(self._project_url(project_id, f"pages/{page_id}/"))
+
+    def update_page_description(self, project_id: str, page_id: str, description_html: str) -> dict:
+        """Update page content (description). Uses the InfraWatch custom endpoint."""
+        return self._patch(
+            self._project_url(project_id, f"pages/{page_id}/description/"),
+            {"description_html": description_html},
+        )
