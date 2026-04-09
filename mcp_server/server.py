@@ -211,8 +211,10 @@ def update_work_item(
     description_html: str = "",
     priority: str = "",
     state_id: str = "",
+    label_ids: list[str] | None = None,
+    assignee_ids: list[str] | None = None,
 ) -> str:
-    """Update a work item."""
+    """Update a work item. label_ids and assignee_ids are REPLACE (full list, not append)."""
     data = {}
     if name:
         data["name"] = name
@@ -220,6 +222,10 @@ def update_work_item(
         data["description_html"] = description_html
     if priority:
         data["priority"] = priority
+    if label_ids is not None:
+        data["labels"] = label_ids
+    if assignee_ids is not None:
+        data["assignees"] = assignee_ids
     if state_id:
         data["state"] = state_id
     return _safe(lambda: _get_client().update_work_item(project_id, work_item_id, **data))
