@@ -20,7 +20,7 @@ class PagesMixin:
         """
         params = {}
         if response_format == "markdown":
-            params["format"] = "markdown"
+            params["response_format"] = "markdown"
         return self._get(self._project_url(project_id, f"pages/{page_id}/"), **params)
 
     def update_page(self, project_id: str, page_id: str, **kwargs: Any) -> dict:

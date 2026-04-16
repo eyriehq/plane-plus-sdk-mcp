@@ -20,7 +20,7 @@ class WorkspacePagesMixin:
         """
         params = {}
         if response_format == "markdown":
-            params["format"] = "markdown"
+            params["response_format"] = "markdown"
         return self._get(self._url(f"pages/{page_id}/"), **params)
 
     def update_workspace_page(self, page_id: str, **kwargs: Any) -> dict:
