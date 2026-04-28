@@ -3,14 +3,14 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/plane-plus-lockup-light.svg">
-    <img src=".github/assets/plane-plus-lockup-dark.svg" alt="Plane Plus SDK + MCP by InfraWatch" width="460">
+    <img src=".github/assets/plane-plus-lockup-dark.svg" alt="Plane Plus SDK + MCP" width="460">
   </picture>
 </p>
 
 <h1 align="center">Plane Plus SDK + MCP</h1>
 <p align="center">
   <b>Typed Python client and MCP server for
-  <a href="https://github.com/infrawatchlabs/plane-plus">Plane Plus</a> — built for
+  <a href="https://github.com/eyriehq/plane-plus">Plane Plus</a> — built for
   AI agents.</b>
 </p>
 <p align="center">
@@ -21,7 +21,7 @@
   <a href="#quickstart--mcp-server"><b>MCP quickstart</b></a> •
   <a href="#quickstart--python-sdk"><b>SDK quickstart</b></a> •
   <a href="#configuration"><b>Config</b></a> •
-  <a href="https://github.com/infrawatchlabs/plane-plus"><b>Plane Plus fork</b></a>
+  <a href="https://github.com/eyriehq/plane-plus"><b>Plane Plus fork</b></a>
 </p>
 
 ---
@@ -39,8 +39,8 @@ Two things in one repo, sharing the same HTTP layer:
   directly.
 
 Designed for and supported against
-[Plane Plus](https://github.com/infrawatchlabs/plane-plus) — InfraWatch's
-AI-agent-first fork of [Plane](https://plane.so). Assumes the Plane Plus
+[Plane Plus](https://github.com/eyriehq/plane-plus) — an AI-agent-first
+fork of [Plane](https://plane.so). Assumes the Plane Plus
 `/api/v1/` surface (API-key auth, markdown round-trip on pages, first-class
 epics, page folders).
 
@@ -70,7 +70,7 @@ Add to your `.claude.json` or workspace `.mcp.json`:
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/infrawatchlabs/plane-plus-sdk-mcp.git",
+        "git+https://github.com/eyriehq/plane-plus-sdk-mcp.git",
         "plane-mcp"
       ],
       "env": {
@@ -100,7 +100,7 @@ or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
       "command": "uvx",
       "args": [
         "--from",
-        "git+https://github.com/infrawatchlabs/plane-plus-sdk-mcp.git",
+        "git+https://github.com/eyriehq/plane-plus-sdk-mcp.git",
         "plane-mcp"
       ],
       "env": {
@@ -132,13 +132,13 @@ client expects stdio transport, that's what FastMCP exposes by default.
 The examples above track `main`. For stability, pin to a tag:
 
 ```
-"args": ["--from", "git+https://github.com/infrawatchlabs/plane-plus-sdk-mcp.git@v1.0.0", "plane-mcp"]
+"args": ["--from", "git+https://github.com/eyriehq/plane-plus-sdk-mcp.git@v1.0.0", "plane-mcp"]
 ```
 
 Or to a specific commit:
 
 ```
-"args": ["--from", "git+https://github.com/infrawatchlabs/plane-plus-sdk-mcp.git@abcd123", "plane-mcp"]
+"args": ["--from", "git+https://github.com/eyriehq/plane-plus-sdk-mcp.git@abcd123", "plane-mcp"]
 ```
 
 To force a re-fetch after a new release: `uvx --refresh --from ...`.
@@ -150,13 +150,13 @@ To force a re-fetch after a new release: `uvx --refresh --from ...`.
 ### Install
 
 ```bash
-pip install git+https://github.com/infrawatchlabs/plane-plus-sdk-mcp.git
+pip install git+https://github.com/eyriehq/plane-plus-sdk-mcp.git
 ```
 
 Or with uv:
 
 ```bash
-uv add git+https://github.com/infrawatchlabs/plane-plus-sdk-mcp.git
+uv add git+https://github.com/eyriehq/plane-plus-sdk-mcp.git
 ```
 
 ### Use
@@ -259,7 +259,7 @@ API tokens are workspace-scoped and inherit the creating user's permissions.
 Clone, install in editable mode, and run the MCP server against your instance:
 
 ```bash
-git clone https://github.com/infrawatchlabs/plane-plus-sdk-mcp.git
+git clone https://github.com/eyriehq/plane-plus-sdk-mcp.git
 cd plane-sdk-mcp
 uv sync
 export PLANE_BASE_URL=https://plane.example.com
@@ -299,16 +299,16 @@ Apache License 2.0. See [LICENSE](./LICENSE).
 
 ## Related projects
 
-- **[Plane Plus](https://github.com/infrawatchlabs/plane-plus)** — InfraWatch's
-  AI-agent-first fork of Plane. This SDK is the most direct way to drive it.
+- **[Plane Plus](https://github.com/eyriehq/plane-plus)** — an AI-agent-first
+  fork of Plane. This SDK is the most direct way to drive it.
 - **[Plane](https://plane.so)** — the upstream project this SDK is a client
   for. The core SDK surface works against any Plane instance.
 - **[InfraWatch Labs](https://infrawatchlabs.com)** — maker of this SDK and
-  the wider InfraWatch AI-agent platform.
+  the EyrieHQ observability platform.
 
 ---
 
 <p align="center">
   <em>Built by <a href="https://infrawatchlabs.com">InfraWatch Labs</a>, maker
-  of the InfraWatch AI-agent platform.</em>
+  of the EyrieHQ observability platform.</em>
 </p>
