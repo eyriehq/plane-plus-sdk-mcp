@@ -36,7 +36,7 @@ class PagesMixin:
         content_html: str,
         content_format: str = "html",
     ) -> dict:
-        """Replace the full page content (body). Uses the InfraWatch custom endpoint.
+        """Replace the full page content (body). Uses the Plane Plus custom endpoint.
 
         The underlying API field is 'description_html' but we expose it
         as 'content' since that's what it actually is — the page body.
